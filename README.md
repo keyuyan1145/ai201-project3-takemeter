@@ -86,6 +86,8 @@ entertainment
 
 ## Model & Training
 
+Colab: [Colab](https://colab.research.google.com/drive/1LC3jEn-It1DwiRlirui0w4zk5pOUZQXB?usp=sharing)
+
 **Model:** `distilbert-base-uncased` fine-tuned on the labeled dataset.
 
 **Hyperparameter adjustments:**
@@ -97,6 +99,8 @@ entertainment
 ---
 
 ## Evaluation Results
+
+Demo walkthrough: [Demo](https://drive.google.com/file/d/12PL-B5U7FLePfEhKrsBxoWzNRDXs1EDW/view?usp=drive_link)
 
 ### Overall Accuracy
 
