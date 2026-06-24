@@ -17,14 +17,36 @@ A fine-tuned text classifier that categorizes r/nba Reddit posts into four inten
 | `discussion` | A post that exists to solicit the community's opinion — an open question, hypothetical, or bare assertion designed to attract pushback — whose value lives in the replies. |
 | `entertainment` | A post whose value is entirely emotional or aesthetic — humor, awe, nostalgia — where a different outcome would not meaningfully change its appeal. |
 
+**Label examples:**
+
+- **news** — "[Charania] Just in: The Portland Trail Blazers are hiring Minnesota Timberwolves lead assistant Micah Nori as the franchise's next head coach, sources tell ESPN." / "[Charania] BLOCKBUSTER: The Milwaukee Bucks are trading franchise icon Giannis Antetokounmpo and Bobby Portis to the Miami Heat for Tyler Herro, Kel'el Ware, Jaime Jaquez Jr., Kasparas Jakucionis, 3 first-round picks..."
+- **analysis** — "The Timberwolves have turned Karl-Anthony Towns, their 2024 first round pick, 2026 first round pick, and 2031 first round pick into Donte DiVincenzo, Ayo Dosunmu, and Joan Beringer." / "[Noh] My salary model has Trae Young at $115.1 million in value over the next four years, assuming an average of 70 games played / 34 mpg. That makes his $212 million contract underwater by $97 million."
+- **discussion** — "Do you think LeBron and Curry were more important to the NBA than Ronaldo and Messi are to soccer?" / "Based on their current cores, which top prospects (2026) fit the Wizards and Jazz? If you are the Wizards, will you pick Dybantsa or Peterson?"
+- **entertainment** — "Why doesn't Wemby simply grow a 3-foot flattop to help block shots without the risk of fouling?" / "Chuck watching Cardi B's halftime performance: 'I don't know if those are B's. They might be Cardi D's... She should change her name.'"
+
 **Success criteria:** ≥70% overall accuracy and ~70% per-class accuracy (±5% tolerance) on a balanced test set.
+
+---
+
+## Hard Edge Cases
+
+Three boundary pairs where the label is genuinely ambiguous, with the tiebreaker rule applied.
+
+**News vs. Analysis:** A post that compiles known facts into a structured comparison. Individual facts are news, but original assembly and framing make it analysis. Tiebreaker: could it run as a wire headline with no byline? If yes → `news`. If the poster's reasoning is what makes it worth reading → `analysis`.
+> *Resolved example:* "Giannis Antetokounmpo leaves Milwaukee as the Bucks' all-time leader in points, rebounds, assists, and blocks. He and Kevin Garnett with the Timberwolves are the only players in NBA history to lead a franchise in all four categories." — Strip the Garnett comparison and the stat list still stands alone as a headline. → **`news`**
+
+**Analysis vs. Discussion:** A post that states a confident verdict with one supporting stat but no reasoning chain. The stat is bait, not evidence; the post wants argument, not agreement. Tiebreaker: does the post build a chain from evidence to conclusion? If yes → `analysis`. If it asserts without showing work → `discussion`.
+> *Resolved example:* "Giannis has 1 playoff series win over the last 5 years. This trade will be a disaster for Miami. Not a fan!" — No reasoning chain; designed to attract pushback. → **`discussion`**
+
+**News vs. Entertainment:** A post that contains a new fact but where the appeal comes entirely from framing or charm. Tiebreaker: would a different outcome or quote change the post's value? If yes → `news`. If the feeling works regardless of the specific result → `entertainment`.
+> *Resolved example:* "Jalen Brunson to release children's book: 'I've been thinking a lot about how I can show kids who might not be the tallest or the fastest, that they, too, have greatness in them.'" — A different quote would change the appeal entirely; the feeling is the value. → **`entertainment`**
 
 ---
 
 ## Dataset
 
 - **Source:** r/nba, collected by saving Reddit pages as PDF or HTML-tagged PDF and extracting post text via Claude. Text-only posts; image, video, and media-first posts were excluded.
-- **Size:** 200+ examples, targeting ≥50 per label for an even distribution.
+- **Size:** 279 total examples. Final per-label distribution: `news` 74, `analysis` 55, `discussion` 84, `entertainment` 66.
 - **Balancing:** Over-represented labels were trimmed to match the floor of smaller labels. The `analysis` label was supplemented with 20 AI-generated examples (10 unambiguous, 10 boundary cases) due to limited organic posts.
 - **Annotation:** Dataset was pre-labeled by Claude using the finalized label definitions as a system prompt. A random sample was reviewed by a human annotator for agreement; ambiguous cases were labeled directly by hand. All examples carry an `llm_labeled` flag for auditability.
 
@@ -32,7 +54,7 @@ A fine-tuned text classifier that categorizes r/nba Reddit posts into four inten
 
 ## Classification System Prompt
 
-Used as the system prompt for both baseline evaluation (zero-shot Claude) and annotation pre-labeling.
+Used as the system prompt for baseline evaluation (zero-shot `llama-3.3-70b-versatile`, no fine-tuning) and dataset annotation pre-labeling (Claude).
 
 ```
 You are classifying posts from r/nba.
@@ -80,12 +102,12 @@ entertainment
 
 | Model | Overall Accuracy |
 |-------|:---------------:|
-| Baseline (zero-shot Claude) | 71% |
+| Baseline (`llama-3.3-70b-versatile`, zero-shot) | 71% |
 | Fine-tuned (DistilBERT, 6 epochs) | **86%** (36/42) |
 
 ### Per-Class Accuracy
 
-| Label | Baseline | Fine-Tuned |
+| Label | Baseline (Llama-3.3-70B) | Fine-Tuned (DistilBERT) |
 |-------|:--------:|:----------:|
 | `news` | <70% | 100% (11/11) |
 | `analysis` | >70% | 89% (8/9) |
