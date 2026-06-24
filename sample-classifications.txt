@@ -1,0 +1,25 @@
+Sample classifications: 4  (2 correct, 2 wrong)
+
+--- #1 ---
+Text:      [Fischer] Sacramento has already had conversations with Charlotte and Toronto, trying to see if there was an opportunity to move Domantas Sabonis, and get into the 18/19 range, where the Hornets and R...
+True:      news
+Predicted: news  (confidence: 0.68)
+Result:    correct
+
+--- #2 ---
+Text:      Something nobody is talking about: the Knicks' bench outscored the Spurs' bench 87-31 across the Finals. That's not a star gap — Wemby and Brunson basically cancelled out. It's a depth gap. Alvarado, ...
+True:      analysis
+Predicted: analysis  (confidence: 0.42)
+Result:    correct
+
+--- #3 ---
+Text:      [OC]: The New York/Dayton Renaissance - The little-known story of the all-Black, Black-owned team that tried to overcome corruption to integrate the NBA. Moving to one of the most racist cities in the...
+True:      analysis
+Predicted: news  (confidence: 0.45)
+Result:    wrong
+
+--- #4 ---
+Text:      Chris Jent (Knicks assistant) ALL-TIME NBA stats: 37 points, 16 rebounds, 8 assists. Jokic against the Timberwolves on 4/1/2022: 38 points, 19 rebounds, 8 assists.
+True:      entertainment
+Predicted: analysis  (confidence: 0.44)
+Result:    wrong

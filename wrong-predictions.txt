@@ -1,0 +1,31 @@
+Wrong predictions: 6 / 42
+
+--- #1 ---
+Text:      Jalen Brunson and Josh Hart toss out first pitches at Yankee Stadium after securing the New York Knicks' first NBA championship in 53 years
+True:      entertainment
+Predicted: news  (confidence: 0.56)
+
+--- #2 ---
+Text:      What actually happened to James Harden in game 6 of the 2017 Western Conference Semi Finals. Kawhi Leonard was injured for the Spurs. The Rockets were down 3-2 and at home. Harden was 2nd (should have...
+True:      discussion
+Predicted: analysis  (confidence: 0.49)
+
+--- #3 ---
+Text:      Carmelo is the most unlucky athlete ever. Melo lost his nick name, his number, his city, his top10 scorer and his full name now. What else can he lose? It's just a joke guys.
+True:      entertainment
+Predicted: discussion  (confidence: 0.69)
+
+--- #4 ---
+Text:      In 2017 OG Anunoby tore his ACL crashing the glass in college. Nine years later, on an eerily similar play, he made the game winning tip in the finals!
+True:      entertainment
+Predicted: news  (confidence: 0.32)
+
+--- #5 ---
+Text:      Chris Jent (Knicks assistant) ALL-TIME NBA stats: 37 points, 16 rebounds, 8 assists. Jokic against the Timberwolves on 4/1/2022: 38 points, 19 rebounds, 8 assists.
+True:      entertainment
+Predicted: analysis  (confidence: 0.44)
+
+--- #6 ---
+Text:      [OC]: The New York/Dayton Renaissance - The little-known story of the all-Black, Black-owned team that tried to overcome corruption to integrate the NBA. Moving to one of the most racist cities in the...
+True:      analysis
+Predicted: news  (confidence: 0.45)

@@ -1,0 +1,76 @@
+Correct predictions: 34 / 42
+
+--- #1 ---
+Text:      Why did Karl Malone go as the 13th pick in the 1985 nba draft? Why did he not go in the lottery? was he not seen as that good of a prospect? Also is he the best player from the 1985 draft?
+True:      discussion
+Predicted: discussion  (confidence: 0.54)
+
+--- #2 ---
+Text:      Day 6 of Sochan being shirtless. Here he is accepting the key to the city from Mayor Mamdani.
+True:      entertainment
+Predicted: entertainment  (confidence: 0.34)
+
+--- #3 ---
+Text:      [Fischer] Sacramento has already had conversations with Charlotte and Toronto, trying to see if there was an opportunity to move Domantas Sabonis, and get into the 18/19 range, where the Hornets and R...
+True:      news
+Predicted: news  (confidence: 0.68)
+
+--- #4 ---
+Text:      What actually happened to James Harden in game 6 of the 2017 Western Conference Semi Finals. Kawhi Leonard was injured for the Spurs. The Rockets were down 3-2 and at home. Harden was 2nd (should have...
+True:      discussion
+Predicted: discussion  (confidence: 0.45)
+
+--- #5 ---
+Text:      Something nobody is talking about: the Knicks' bench outscored the Spurs' bench 87-31 across the Finals. That's not a star gap — Wemby and Brunson basically cancelled out. It's a depth gap. Alvarado, ...
+True:      analysis
+Predicted: analysis  (confidence: 0.42)
+
+--- #6 ---
+Text:      Spurs and Knicks in the 1st Quarters of the Finals 158 - 101. Spurs and Knicks in the 4th Quarters of the Finals 105 - 131. The Spurs outscored the Knicks in all the 1st quarters combined, 158 - 101. ...
+True:      analysis
+Predicted: analysis  (confidence: 0.47)
+
+--- #7 ---
+Text:      Can the Indiana Pacers return to the finals in 2027? I think Zu gives the Pacers a post presence on both ends that they havent had since the David West / Hibbert era. Plus he is the far superior rebou...
+True:      discussion
+Predicted: discussion  (confidence: 0.50)
+
+--- #8 ---
+Text:      There should be a distinction between the regular season GOAT and the postseason GOAT. This model not only simplifies the whole GOAT debate, it also promotes more inclusivity.
+True:      discussion
+Predicted: discussion  (confidence: 0.37)
+
+--- #9 ---
+Text:      [SiriusXM] Chris Haynes on Giannis Antetokounmpo: "From what I'm hearing this could drag on into free agency. This could drag on until July … I do still believe he will be moved this offseason, but I'...
+True:      news
+Predicted: news  (confidence: 0.60)
+
+--- #10 ---
+Text:      [Windhorst] Trae Young is going to re-sign with the Wizards likely on a 3-year, very large contract.
+True:      news
+Predicted: news  (confidence: 0.71)
+
+--- #11 ---
+Text:      Nba draft withdrawal. I was reading up on the nba withdrawal deadlines and saw that 38 guys withdrew on june 13. 35 college players and 3 international. It got me thinking....why would international p...
+True:      discussion
+Predicted: discussion  (confidence: 0.55)
+
+--- #12 ---
+Text:      In light of Becky's Hammond's comments and Brunson proving her wrong by being the best player on a championship team, his nickname should now be 1A. Think it's a pretty cool and fun one, and a nod to ...
+True:      discussion
+Predicted: discussion  (confidence: 0.52)
+
+--- #13 ---
+Text:      Players who has the most top 5 mvp finishes in a row in nba history. 1st - LeBron James, 2006 - 2018 (13 years). LeBron was top 5 in mvp voting for 13 years in a row.
+True:      analysis
+Predicted: analysis  (confidence: 0.44)
+
+--- #14 ---
+Text:      Multiple NBA big men are reportedly trying to find a way to play alongside Wemby on the Spurs. Which big men do you want to see play alongside Wemby? Personally I want to see players like Aaron Gordon...
+True:      discussion
+Predicted: discussion  (confidence: 0.50)
+
+--- #15 ---
+Text:      What are some of the biggest what ifs from this years playoffs? With the playoffs now in the books and the Knicks being the NBA champions, this got me thinking, what are some of the biggest what ifs f...
+True:      discussion
+Predicted: discussion  (confidence: 0.58)
